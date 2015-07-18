@@ -1,0 +1,265 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no, minimal-ui">
+<title>VERACITY</title>
+<link href="fluid.css" rel="stylesheet" type="text/css">
+<link rel="icon" 
+      type="image/png" 
+      href="images/favicon.png">
+<script src="jquery-1.11.1.min.js"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="respond.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+	$("#menu").click(function() {
+    	var menu = $("#nav");
+    		if ($(menu).is(":visible")) {
+       	 		$(menu).animate({width: 0}, 1000, function() {$(menu).hide();});
+    		} else {
+				$(menu).css({
+					'float': 'left',
+				});
+        		$(menu).show().animate({width: 240}, 1000);           
+    		}
+	});
+   /* Every time the window is scrolled ... */
+    $("#mainBG").scroll( function(){
+    var increaseTime=1000;
+        /* Check the location of each desired element */
+        $('.hideMe').each( function(){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},increaseTime);
+                increaseTime+=1000;
+            }
+            
+        });
+		$('.hideMeMember').each( function(){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it in */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},4000);
+            }
+            
+        }); 
+    
+    }); 
+});
+</script>
+<!-- begin slider -->
+<link rel="stylesheet" href="slider/css/slider-pro.min.css"/>
+<script src="slider/js/jquery.sliderPro.min.js"></script>
+<script type="text/javascript">
+	jQuery( document ).ready(function( $ ) {
+		var prevSlide = 0;
+		$( '#storySlider' ).sliderPro({
+			autoplay:false,
+			arrows:true,
+			height:300,
+			width:'100%',
+			responsive:true,
+			buttons:false,
+			gotoSlide: function( event ) {
+        	console.log( event.index );
+   	 		},
+		});
+	});
+</script>
+<!-- end slider -->
+<!-- begin alerts -->
+<script src="alerts/sweet-alert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="alerts/sweet-alert.css">
+<script type="text/javascript">
+function dis1(){
+	swal({   title: "Align",   text: "One of our core philosophies is to align the scope of all our endeavours making sure the same amount of care a precision is taken with every aspect of our products.",   type: "success",   confirmButtonText: "Continue", allowOutsideClick: true });
+}
+function dis2(){
+	swal({   title: "Synergy",   text: "Working together from R&D to HR, Veracity remains committed to making sure all of our products provide a consistent experience across all platforms (which is why we're open source!)",   type: "success",   confirmButtonText: "Continue", allowOutsideClick: true });
+}
+function dis3(){
+	swal({   title: "Global",   text: "We have a global vision for Veracity and we're signing new clients all the time, from NY to Dubai.",   type: "success",   confirmButtonText: "Continue", allowOutsideClick: true });
+}
+function dis4(){
+	swal({   title: "Science",   text: "With the most sophisticated hardware and software, comes the most intelligent engineers and scientists alike to work to create something truly great",   type: "success",   confirmButtonText: "Continue", allowOutsideClick: true });
+}
+function dis5(){
+	swal({   title: "Innovation",   text: "If you stand still, you move backwards. This is why we are 100% committed to updating all of our customers to the newest software and hardware, free of charge.",   type: "success",   confirmButtonText: "Continue", allowOutsideClick: true });
+}
+</script>
+<!-- end alerts -->
+</head>
+<body>
+<div class="gridContainer clearfix">
+  <section id="header">
+    <span id="logo">
+       <p id="textLogo">VERACITY</p>
+    	<span id="menu">&#9776;</span>   
+    </span>
+    <section  id="navPadder">
+    	<ul class="menuSection" id="nav">
+        	<li class="menuItem"><a class = "menuLink" href="#intro">HOME</a></li>
+        	<li class="menuItem"><a class = "menuLink" href="#firstSlide">OUR STORY</a></li>
+        	<li class="menuItem"><a class = "menuLink" href="#team">THE TEAM</a></li>
+        	<li class="menuItem"><a class = "menuLink hide_mobile" href="#products">PORTFOLIO</a></li>
+  		</ul>
+    </section>
+   </section>
+   
+    <div id="mainBG" class="pageSlide"> 
+            <div id="intro">
+            	<a href="#firstSlide">
+                    <div id="welcomeText" class="rotateSlowCounter">
+                    	<div id="mainIntro">
+                        <p class="introText centeredText"><b>RELIABILITY, SPEED AND PERFORMANCE</p>
+                        <p id="veracityMain" class="centeredText"> WELCOME TO VERACITY</b> </p> 
+                        </div>            	
+                        <img src="images/bounceDown.png" class="animated bounce arrowBounce">
+                    </div>
+                </a>
+            </div>
+            <div id="firstSlide" class="pageSlide">
+            	<p class="introText paddedSlide centeredText veracityHeader"><b>VERACITY: MOTORSPORT LOGISTICS</b></p>
+                <p class="introText1 centeredText">THE POWER TO PERFORM</p>
+                <p class="introText1 centeredText">EXPERIENCE THE NEXT ERA OF AUTOMOTIVE TECHNOLOGY</p>
+                <div id="circleList"> 
+                	<ul>
+                        <li><a href="#" onclick="dis1()"><img class="circle rotate" src="images/circles/circle1.png" id="circle1" /> </a> <br class="removeMobBreak"/> <span class="centeredText circleDesc"> ALIGN</span></li>
+                        <li> <a href="#" onclick="dis2()"><img class="circle rotate" src="images/circles/circle2.png" id="circle2"  /></a> <br class="removeMobBreak"/><span class="centeredText circleDesc">SYNERGY</span></li>
+                        <li> <a href="#" onclick="dis3()"><img class="circle rotate" src="images/circles/circle3.png" id="circle3" /></a> <br class="removeMobBreak"/> <span class="centeredText circleDesc">GLOBAL</span></li>
+                        <li> <a href="#" onclick="dis4()"><img class="circle rotate" src="images/circles/circle4.png" id="circle4" /></a> <br class="removeMobBreak"/> <span class="centeredText circleDesc">SCIENCE </span></li> 
+                        <li> <a href="#" onclick="dis5()"><img class="circle rotate" src="images/circles/circle5.png" id="circle5" /> </a> <br class="removeMobBreak"/><span class="centeredText circleDesc">INNOVATION </span></li>
+                    </ul>
+                </div>
+             	<img src="images/bounceDown.png" class="animated bounce arrowBounce">
+            </div>
+           <section id="ourStory" class="pageSlide">
+           	<div class="storyContainer cf">
+              <div class="slider-pro" id="storySlider">
+                    <div class="sp-slides">
+                        <!-- Slide 1 -->
+                        <div class="sp-slide">
+                        <h1 id="head1" class="storyHeader"> IN THE BEGINNING </h1> 
+                            <p class="hideMe story"> Born in London, England. Veracity maintains the gold standard for mobile solutions in motorsport. </br> From humble beginnnings, a need for a new era of automotive technology was required. </br>
+                            	Automotive teams were experiencing a boom in data coming from their vehicles, and Veracity has stepped up to the plate to deliver what was needed. </p>
+                        </div>
+                        
+                        <!-- Slide 2 -->
+                        <div class="sp-slide">
+                            <h1  id="head2" class="storyHeader"> NEW HORIZONS </h1> 
+                            <p class="hideMe story"> From 2007 onwards, Veracity has maintained to be the de facto supplier of its very own System-on-a-chip (SoC). <br />
+                            We started with a prototype version of our SoC and quickly upgraded it through several iterations, each time reducing the size and weight, but increasing the power. </p>
+                        </div>
+                        
+                        <!-- Slide 3 -->
+                        <div class="sp-slide">
+                        <h1  id="head3" class="storyHeader"> THE BEYOND </h1> 
+                             <p class="hideMe story"> In 2007, the pinnacle of motorsport was in the aerodynamics, here at veracity we quickly realised there needed to be an infrastracture in place to accomodate this influx of digital data. <br /> And that's still our mission statement, we have been able to retain our championship as the supplier of top-grade silicon chips for motorsport analytics and will continue to do for the foreseeable future. </p>
+                        </div>
+                    </div>
+				</div>
+              <p id="quote1" class="hide_mobile centeredText"><b>"Above and beyond what was required, the pinnacle of precision." <br> 
+                - XEoN Solutions</p>
+                <p id="quote2" class="hide_mobile centeredText">"Without Veracity, analytics for us would be an enigma." <br> 
+                - Relative Components</b></p>
+             </div>
+             	<img src="images/bounceDown.png" class="animated bounce arrowBounce">
+           </section>
+         <div id="team" class="pageSlide">
+                <div class="member"> 
+                	<img class="teamMember hideMeMember"src="images/CEO.png" />
+                   <p class="mainName"><b>Ryan Velaso</p> 
+                   <p class="namePos">CEO of Veracity</b></p>
+                   <p class="nameDesc hide_mobile">"Experience in previous commercial F1 interests. A desire for perfection."</p>
+                </div>
+                <div class="member"> 
+               	 <img class="teamMember hideMeMember"src="images/CTO.png" />
+                    <p class="mainName"><b>Sophie Baker</p>
+                   <p class="namePos"> CTO of Veracity</b></p> 
+                   <p class="nameDesc hide_mobile">"Fitting all technology on to a single chip isn't easy, but it's what we achieved."</p>
+                </div>
+                <div class="member"> 
+                	<img class="teamMember hideMeMember"src="images/CFO.png" />
+                    <p class="mainName"><b> Claire Noble </p>
+                    <p class="namePos"> CFO of Veracity </b></p>
+                   <p class="nameDesc hide_mobile"  name="products"> "Technical awareness is what reaps rewards, and precision is key."</p>
+                </div>
+                 <img src="images/bounceDown.png"  class="animated bounce invert arrowBounce">
+          </div> 
+          <div id="products" class="pageSlide">
+          <div class="videoContainer">
+ 			<video autoplay loop>
+   			 <source src="videos/carInGrass.webm" type='video/webm; codecs="vp8, vorbis"'>
+  			 <source src="videos/carInGrass.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+  			 Video not supported.
+  			</video>
+			</div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/> 
+            <div id="productIntro"><b>Experience the Product</b></div>
+            <br/>
+            <br/>
+            <br/>
+
+            <br/>
+           <a class="linkContent"href="system2.html">
+            <div id="nextPageLink" class="rotateSlow" > 
+            	<div id="linkDiv">
+                    
+                        <p id="titleSection" class="centeredText"><b>SystemOnAChip</b></p>                    
+                </div>
+            </div></a>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+         </div>
+         <div id="footer" class="pageSlide">
+         		<div id="footColOne">
+         			<p id="footerName" class="footerStyle"> VERACITY </p>
+               	<p id="footerSlogan" class="footerStyle"> The power to perform </p>
+                <img class="socIcon rotate" src="images/socialIcons/fb.png" /> 	<a href="https://twitter.com/VeracitySport" target="_blank"><img class="socIcon rotate" src="images/socialIcons/tw.png" /></a>
+                    <a href="https://github.com/ilukecurtis" target="_blank"><img class="socIcon rotate" src="images/socialIcons/gh.png" />
+               </div>
+               <div id="footColTwo">
+               		<p id="footerContact" class="footerStyle"><a href="contact.html"> Contact us</a><br /> <br /> <br /> <br />
+               </div>
+               <div id="footColThree">
+               		<p id="footerAddress" class="footerStyle"> 38 Hipcourt Lane </br> Westminster </br> London </br> W14 3SF</p>
+               </div>
+         </div>
+       </div>
+</div>
+</body>
+
+</html>

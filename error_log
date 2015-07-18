@@ -1,0 +1,1 @@
+[22-Jun-2015 17:05:29 America/New_York] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, object given in /home/veraprvo/public_html/phpTest.php on line 23

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>SoC Veracity</title>
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no, minimal-ui">
+
+<link href="systemCSS.css" rel="stylesheet" type="text/css">
+<link rel="icon" 
+      type="image/png" 
+      href="images/favicon.png">
+<script src="jquery-1.11.1.min.js"></script>
+<script src="easing.js"></script>
+
+<script> 
+$(document).ready(function(){
+	$("#front").fadeOut(2500);
+	$("#back").fadeOut(2500);
+	$("#front3DClick").click(function(){		
+		if($(".descChip").is(':visible')){
+				   $(".descChip").slideUp(500, "easeOutElastic", function(){});
+				   	$("#front").fadeToggle();		
+		}
+		//fade the front toggle
+		$("#front").fadeToggle();		
+		//slide up the old text (if it was showing) and then slide down the new text)
+		$(".descTech").slideUp(500, "easeOutElastic", function(){});
+		$(".descChip").slideDown(1000, "easeInElastic", function(){});
+		//if the back is visible, it shouldnt be though, fade it out.
+		if($("#back").is(":visible")){
+			$("#back").fadeToggle();
+		}
+
+    });
+	$("#rear3DClick").click(function(){ 
+		if($(".descTech").is(':visible')){
+		   $(".descTech").slideUp(500, "easeOutElastic", function(){});
+		          $("#back").fadeToggle();
+		}
+       $("#back").fadeToggle();
+	   $(".descChip").slideUp(500, "easeOutElastic", function(){});
+	   $(".descTech").slideDown(1000, "easeInElastic", function(){});
+		if($("#front").is(":visible")){
+			$("#front").fadeToggle();
+		}
+		
+    });
+	$("#closeContact").click(function(){
+		$("#footer").fadeToggle(1000);
+		$("#showContact").show(1000);
+	});
+	$(".btn").click(function(){
+	});
+});
+</script>
+
+</head>
+<body>
+<div id="main">
+	<div id="logo"><a href="index.html"> VERACITY </a></div> <br /> <br /> <br />
+        <div id="headers">
+        <div id="headerIntro"> Find out more... </div>
+            <div id="front3DClick">
+                The Chip
+            </div>
+            <div id="rear3DClick">
+                 The Technology
+            </div>
+        </div>
+        <div id="introText"> 
+            <span class="title">SHARP</span> <div class="descTech"> <br /> Pinpoint precision, the back-end of this technology is written in part C++, part machine-code for ultimate performance. Insanely low latency and 0.05% overhead to ensure information is relayed at break-neck speed. </div> <div class="descChip"> <br /> The chip is small and lightweight and requires virtually no engine modifications to install, a simple molex adapter into the PSU will give the chip the power it needs in the ultimate package. </div>
+            <span class="title">REFINED</span> <div class="descTech"> <br /> Going through multiple engineers and programmers, the chip utilises the newest of technologies and even its own API that customers can query in real-time, getting data from a variety of sources. </div> <div class="descChip"> <br /> Made from industry-grade silicon and tested on impacts of over 6.5G, you can be sure that our SoC will never falter, the solid-state architecture ensures seamless transistion from hardware inputs, to software outputs </div>
+            <span class="title">EFFICIENT</span> <div class="descTech"> <br /> Lightning quick is the one philosophy we here at Veracity wanted to ensure was instilled in all our products, and this is no different. By traversing a key stack-trace when data is recieved, our data undergoes no data manipulation or conversion, just pure, raw data </div> <div class="descChip"> <br /> Weighing in at a little under 0.75 grams this revolutionary chip will change the way data is gathered from machines. The fact is, production is the single most meticulous process we under take ensuring that our design is manufactured to the nearest nano metre. </div>
+        </div>
+
+        <div id="logos">
+          <a id="cube">
+            <img src="piTop.png"  id="front">
+            <img src="images/codeTech.png" id="back">
+          </a>
+        </div>
+       	
+ </div> <br /><br /> <br /> <br />
+       
+ <div id="footer"> 
+ 	<div id="footerContent">
+        		Like what you've seen? Send enquiries now. <span id="closeContact">&#x2715; </span>
+<br />
+            	 <button class="btn"> <a href="contact.html">Contact us </a></button>
+    </div>
+</div>
+</body>
+</html>
